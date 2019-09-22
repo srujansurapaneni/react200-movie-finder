@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const morgan = require('morgan');
 
@@ -16,7 +18,7 @@ app.get('/movieInfo/:inputValue', (req, res) => {
       res.send(response.data);
     });
   });
-  
+
 app.get('/movie/:id', (req, res) => {
     axios({
         url: `http://omdbapi.com/?i=${req.params.id}&apikey=${process.env.OMDB_API_KEY}`,
