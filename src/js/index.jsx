@@ -1,9 +1,13 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducers from './reducers';
-import App from './app';
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+// import reducers from './reducers';
+import App from "./app";
+
+function reducers() {
+  return null;
+}
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
@@ -12,10 +16,9 @@ const store = createStore(
 );
 /* eslint-enable */
 
-
 render(
-  <Provider store={ store }>
+  <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
